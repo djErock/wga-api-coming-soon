@@ -1,7 +1,7 @@
 const express = require('express');
 const Mongoose = require('mongoose');
 const Bluebird = require('bluebird');
-const config = require('./config/creds');
+const { connStr } = require('./config/creds');
 const { log } = require('./utils/logging');
 const { storeConnection } = require('./utils/connection');
 const { getContent } = require('./api/controllers/comingSoon');
@@ -13,7 +13,7 @@ const apiPrefix = '/comingSoon/v1';
 
 
 Mongoose.Promise = Bluebird;
-Mongoose.connect(config.connection);
+Mongoose.connect(connStr, { useNewUrlParser: true });
 Mongoose.connection.once('open', () => {
     storeConnection(Mongoose.connection, 'wga')
     app.use(log);
