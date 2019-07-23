@@ -10,8 +10,6 @@ const app = express();
 const port = process.env.PORT || 9000;
 const apiPrefix = '/comingSoon/v1';
 
-
-
 Mongoose.Promise = Bluebird;
 Mongoose.connect(connStr, { useNewUrlParser: true });
 Mongoose.connection.once('open', () => {
