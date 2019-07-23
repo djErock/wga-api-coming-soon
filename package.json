@@ -20,7 +20,7 @@
   },
   "scripts": {
     "scorch": "rm -rf node_modules && rm -rf package-lock.json && npm i && npm start",
-    "start": "node app.js",
+    "start": "node App.js",
     "test": "npm test"
   }
 }
