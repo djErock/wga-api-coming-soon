@@ -4,7 +4,7 @@ module.exports = {
     getContent: async (req, res, next) => {
         const pageSchema = new Mongoose.Schema({ name: String, constent: String });
         let Pages;
-        if (mongoose.models.Admin) {
+        if (Mongoose.models.Pages) {
             Pages = Mongoose.model('Pages');
         } else {
             Pages = Mongoose.model('Pages', pageSchema);
